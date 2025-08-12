@@ -1,0 +1,6 @@
+192.168.100.149      master1.k8s.local       master1
+192.168.100.150      master2.k8s.local       master2
+192.168.100.151      master3.k8s.local       master3
+192.168.100.152      worker1.k8s.local       worker1        10.200.0.0/24
+192.168.100.153      worker2.k8s.local       worker2        10.200.1.0/24
+192.168.100.154      worker3.k8s.local       worker3        10.200.2.0/24

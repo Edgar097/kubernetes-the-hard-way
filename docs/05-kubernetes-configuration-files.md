@@ -16,7 +16,7 @@ Generate a kubeconfig file for the `node-0` and `node-1` worker nodes:
 
 ```bash
 for host in node-0 node-1; do
-  kubectl config set-cluster kubernetes-the-hard-way \
+  kubectl config set-cluster edgar-home-lab \
     --certificate-authority=ca.crt \
     --embed-certs=true \
     --server=https://server.kubernetes.local:6443 \
@@ -29,7 +29,7 @@ for host in node-0 node-1; do
     --kubeconfig=${host}.kubeconfig
 
   kubectl config set-context default \
-    --cluster=kubernetes-the-hard-way \
+    --cluster=edgar-home-lab \
     --user=system:node:${host} \
     --kubeconfig=${host}.kubeconfig
 
@@ -51,10 +51,10 @@ Generate a kubeconfig file for the `kube-proxy` service:
 
 ```bash
 {
-  kubectl config set-cluster kubernetes-the-hard-way \
+  kubectl config set-cluster edgar-home-lab \
     --certificate-authority=ca.crt \
     --embed-certs=true \
-    --server=https://server.kubernetes.local:6443 \
+    --server=https://192.168.100.100:6443 \
     --kubeconfig=kube-proxy.kubeconfig
 
   kubectl config set-credentials system:kube-proxy \
@@ -64,7 +64,7 @@ Generate a kubeconfig file for the `kube-proxy` service:
     --kubeconfig=kube-proxy.kubeconfig
 
   kubectl config set-context default \
-    --cluster=kubernetes-the-hard-way \
+    --cluster=edgar-home-lab \
     --user=system:kube-proxy \
     --kubeconfig=kube-proxy.kubeconfig
 
@@ -85,10 +85,10 @@ Generate a kubeconfig file for the `kube-controller-manager` service:
 
 ```bash
 {
-  kubectl config set-cluster kubernetes-the-hard-way \
+  kubectl config set-cluster edgar-home-lab \
     --certificate-authority=ca.crt \
     --embed-certs=true \
-    --server=https://server.kubernetes.local:6443 \
+    --server=https://192.168.100.100:6443 \
     --kubeconfig=kube-controller-manager.kubeconfig
 
   kubectl config set-credentials system:kube-controller-manager \
@@ -98,7 +98,7 @@ Generate a kubeconfig file for the `kube-controller-manager` service:
     --kubeconfig=kube-controller-manager.kubeconfig
 
   kubectl config set-context default \
-    --cluster=kubernetes-the-hard-way \
+    --cluster=edgar-home-lab \
     --user=system:kube-controller-manager \
     --kubeconfig=kube-controller-manager.kubeconfig
 
@@ -120,10 +120,10 @@ Generate a kubeconfig file for the `kube-scheduler` service:
 
 ```bash
 {
-  kubectl config set-cluster kubernetes-the-hard-way \
+  kubectl config set-cluster edgar-home-lab \
     --certificate-authority=ca.crt \
     --embed-certs=true \
-    --server=https://server.kubernetes.local:6443 \
+    --server=https://192.168.100.100:6443 \
     --kubeconfig=kube-scheduler.kubeconfig
 
   kubectl config set-credentials system:kube-scheduler \
@@ -133,7 +133,7 @@ Generate a kubeconfig file for the `kube-scheduler` service:
     --kubeconfig=kube-scheduler.kubeconfig
 
   kubectl config set-context default \
-    --cluster=kubernetes-the-hard-way \
+    --cluster=edgar-home-lab \
     --user=system:kube-scheduler \
     --kubeconfig=kube-scheduler.kubeconfig
 
@@ -154,10 +154,10 @@ Generate a kubeconfig file for the `admin` user:
 
 ```bash
 {
-  kubectl config set-cluster kubernetes-the-hard-way \
+  kubectl config set-cluster edgar-home-lab \
     --certificate-authority=ca.crt \
     --embed-certs=true \
-    --server=https://127.0.0.1:6443 \
+    --server=https://192.168.100.100:6443 \
     --kubeconfig=admin.kubeconfig
 
   kubectl config set-credentials admin \
@@ -167,7 +167,7 @@ Generate a kubeconfig file for the `admin` user:
     --kubeconfig=admin.kubeconfig
 
   kubectl config set-context default \
-    --cluster=kubernetes-the-hard-way \
+    --cluster=edgar-home-lab \
     --user=admin \
     --kubeconfig=admin.kubeconfig
 
